@@ -7,7 +7,7 @@
         <asignaturas>
             <asignatura id="38205">
                 <nombre>ARQUITECTURA DE SISTEMAS SOFTWARE</nombre>
-                <descripcion></descripcion>
+                <descripcion>Una pequenia descripcion</descripcion>
                 <creditos>6</creditos>
                 <localizacion>
                     <lat>3.1415</lat>
