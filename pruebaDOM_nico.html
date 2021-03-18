@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leer XML</title>
+    </head>
+    <body>
+        <div id="contenido">
+            <h1>Datos Obtenidas de XML</h1>
+            <div class="cuarta"></div>
+        </div>
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript">
+            
+        $(document).ready(function(){
+            $.get("nuestroxml.xml",function(xml){ 
+                var masteres = xml.getElementsByTagName("master");
+                for (var i=0; i<masteres.length ; i++) {
+                    var nombreMaster = masteres[i].attributes.getNamedItem("nombre").nodeValue;
+                    console.log("Master " + i + " : " + nombreMaster);
+
+                    var asignaturasMaster = masteres[i].getElementsByTagName("asignatura");
+                    for (var j=0; j<asignaturasMaster.length ; j++) {
+                        // console.log("\tAsignatura: " + asignaturasMaster[j].attributes.getNamedItem("id").nodeValue);
+                        console.log(j + "\tAsignatura: " + asignaturasMaster[j].getElementsByTagName("nombre")[0].childNodes[0].nodeValue);
+                    }
+                    // masteres[i].childNodes[0].nodeValue);
+                }
+                // $('entry',xml).each(function() {
+                //     alert("22222222222222"); 
+                //     codigo = $(this).find('content').text(); 
+                //     datos = crearNoticiaHtml(codigo);
+                //     $(".cuarta").append(datos);
+                // });
+            }); 
+
+            // parser = new DOMParser();
+            // xmlDoc = parser.parseFromString("book.xml","text/xml");
+            //mostrarXML();
+        });
+    </script>
+
+</html>
