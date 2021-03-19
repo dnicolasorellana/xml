@@ -23,7 +23,7 @@
             <div class="row p-2">
                 <div class="form-group col-md-2">
                     <label for="inputEmail4">Identificador</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="XXXX">
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="XXXX">
                     <small id="emailHelp" class="form-text text-muted">4 caracteres</small>
                 </div>
                 <div class="form-group col-md-3">
@@ -39,72 +39,64 @@
                 </div>
                 <div class="form-group col-md-7">
                     <label for="inputPassword4">Nombre del máster</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Nombre">
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Nombre">
                 </div>
             </div>
 
             <hr />
 
-            <!-- ASIGNATURAS -->
-            <div class="row mi_pt1 mi_pb1">
-                <div class="col-md-4 border border-2 p-4 m-2">
-                    <h5>Asignaturas actuales: </h5>
-                    <div class="list-group" id="list-tab" role="tablist">
-                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
-                            href="#list-home" role="tab" aria-controls="home">Home</a>
-                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
-                            href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
-                            href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
-                            href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+            <!-- Asignaturas -->
+            <div class="row" id="nuevaAsignatura">
+                <h5>Asignaturas</h5>
+
+                <div id="input-asignatura">
+                    <div class="row form-group border border-2">
+                        <span class="p-2">Asignatura</span>
+                        <input type="text" class="form-control m-2 w-25" placeholder="Nombre asignatura">
+                        <input type="text" class="form-control m-2 w-25" placeholder="Descripción">
+                        <input type="text" class="form-control m-2 w-25" placeholder="Número de créditos">
+                        <input type="text" class="form-control m-2 w-25" placeholder="Localización">
                     </div>
                 </div>
-                <div class="col-md-7 form-group bg-info p-4 m-2">
-                    <h5>Introduzca datos de la asignatura:</h5>
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="list-home" role="tabpanel"
-                            aria-labelledby="list-home-list">aaa</div>
-                        <div class="tab-pane fade" id="list-profile" role="tabpanel"
-                            aria-labelledby="list-profile-list">bbb</div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel"
-                            aria-labelledby="list-messages-list">ccc</div>
-                        <div class="tab-pane fade" id="list-settings" role="tabpanel"
-                            aria-labelledby="list-settings-list">ddd</div>
+                <a class="btn btn-primary mt-2 pt-1 px-3 text-white w-25" onclick="addAsignatura()">Añadir
+                    asignatura</a>
+                <a class="btn btn-primary mt-2 pt-1 px-3 text-white w-25" id="btn-borrarAsignatura"
+                    onclick="removeAsignatura()">Borrar asignatura</a>
+
+                <!-- Profesores de la asignatura -->
+                <div class="row bg-secondary mt-2">
+                    <h6 class="mt-3">Profesor</h6>
+                    <div id="input-profesor">
+                        <div>
+                            <input type="text" class="form-control m-2 mt-4" placeholder="Nombre">
+                            <input type="text" class="form-control m-2" placeholder="Apellido">
+                        </div>
+                    </div>
+                    <div class="container-fluid text-center">
+                        <a class="btn btn-primary mt-2 pt-1 px-3 text-white" onclick="addProfesor()">+</a>
+                        <a class="btn btn-primary mt-2 pt-1 px-3 text-white" id="btn-borrarProfesor"
+                            onclick="removeProfesor()">-</a>
+                    </div>
+                </div>
+                <!-- Alumnos de la asignatura -->
+                <div class="row mt-2">
+                    <h6 class="mt-3">Alumnos</h6>
+                    <div id="input-alumnos">
+                        <div>
+                            <input type="text" class="form-control m-2 mt-4" placeholder="Nombre alumno">
+                            <input type="text" class="form-control m-2" placeholder="Apellido alumno">
+                        </div>
+                    </div>
+                    <div class="container-fluid text-center">
+                        <a class="btn btn-primary mt-2 pt-1 px-3 text-white" onclick="addAlumno()">+</a>
+                        <a id="btn-borrarAlumno" class="btn btn-primary mt-2 pt-1 px-3 text-white"
+                            onclick="removeAlumno()">-</a>
                     </div>
                 </div>
             </div>
-
-            <!-- PROFESORES -->
-            <div class="row">
-
-            </div>
-
-            <!-- ALUMNOS -->
-            <div class="row">
-
-            </div>
-
-            <!-- 
-            <div class="form-group p-2">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-                <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
-            </div>
-             -->
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
+        </div>
+        <button type="submit" class="btn btn-primary">Añadir</button>
+    </form>
     </div>
 
     <!-- Scripts -->
@@ -112,6 +104,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+    <script src="js/dynform.js"></script>
     <script src="js/formulario.js"></script>
     <script src="js/bootstrap.js"></script>
 
