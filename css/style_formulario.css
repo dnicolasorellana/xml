@@ -22,3 +22,15 @@
 .mi_pb3 {
     padding-bottom: 3em;
 }
+
+.dividir_en_dos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1em;
+    /*gap: 1em;*/
+}
+
+.dividir_en_dos div {
+    background: lightgray;
+    padding: 1em;
+}

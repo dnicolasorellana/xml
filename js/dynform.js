@@ -36,6 +36,15 @@ function addAsignatura() {
     removeBtnAsig.classList.remove('disabled');
 }
 
+// Para duplicar el elemento asignatuara
+function addAsignatura2() {
+    const inputDyn = document.getElementById('nuevaAsignatura');
+    let newInput = inputDyn.firstElementChild.cloneNode(true);
+    newInput.lastElementChild.value = "";
+    inputDyn.appendChild(newInput);
+    //removeBtnAsig.classList.remove('disabled');
+}
+
 function removeAsignatura() {
     const inputDyn = document.getElementById('input-asignatura');
     inputDyn.removeChild(inputDyn.lastElementChild);
