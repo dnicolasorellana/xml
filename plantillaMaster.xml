@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE masteres SYSTEM "./masteres.dtd"> -->
+<?xml-stylesheet href="mostrar.xsl" type="text/xsl" ?>
+
+<masteres xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./masteres.xsd">
+    <master id="0000" anio="2020-21" nombre="add">
+        <asignaturas>
+            <asignatura id="0000">
+                <nombre></nombre>
+                <descripcion></descripcion>
+                <creditos>0</creditos>
+                <localizacion>
+                    <lat>0</lat>
+                    <long>0</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>x</nombre>
+                        <apellidos>x</apellidos>
+                        <nacimiento>01-01-2000</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>x</nombre>
+                        <apellidos>x</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+        </asignaturas>
+    </master>
+</masteres>

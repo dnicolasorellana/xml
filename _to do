@@ -1,0 +1,11 @@
+
+Crear un xml plantilla      -> ok
+
+Duplicar la plantilla al crear el master 
+
+Hacer que cuando se cree una nueva asignatura se guarde los datos en el xml duplicado
+
+Si se quiere crear otra que se lea lo escrito y cree el nodo asignatura con sus profesores y alumnos, se guarde
+en el xml duplicado y luego se refresque el form (poner vacio todo para que se pueda añadir una nueva asignatura ahi)
+
+Habría que mostrar las asignaturas añadidas al principio para tener un control de ellas
