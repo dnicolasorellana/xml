@@ -9,3 +9,9 @@ Si se quiere crear otra que se lea lo escrito y cree el nodo asignatura con sus 
 en el xml duplicado y luego se refresque el form (poner vacio todo para que se pueda añadir una nueva asignatura ahi)
 
 Habría que mostrar las asignaturas añadidas al principio para tener un control de ellas
+
+
+        /*
+            var nom = p.getElementsByTagName("h2")[0].childNodes[0].nodeValue;
+            console.log(i + " #  master: " + nom);
+        */

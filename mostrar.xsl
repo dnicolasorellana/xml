@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Principal</a>
+                  <a class="nav-link active" aria-current="page" href="./nuestroxml.xml">Principal</a>
                 </li>
 
                 <li class="nav-item dropdown">
