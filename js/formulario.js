@@ -43,7 +43,8 @@ function comprobarAsignaturaRellena() {
 }
 
 // arrays que contendrán los datos de los nodos
-var datos = [];     // datos generales y de la primera asignatura
+var datos = [];     // datos generales del master 
+var asig = [];      // de la primera asignatura
 var profes = [];
 var alus = [];
 
@@ -53,10 +54,10 @@ function obtenerDatos() {
     datos.push($('#anyo').val());
     datos.push($('#master').val());
 
-    datos.push($('#asig-0-id').val());
-    datos.push($('#asig-0-nombre').val());
-    datos.push($('#asig-0-desc').val());
-    datos.push($('#asig-0-creditos').val());
+    asig.push($('#asig-0-id').val());
+    asig.push($('#asig-0-nombre').val());
+    asig.push($('#asig-0-desc').val());
+    asig.push($('#asig-0-creditos').val());
 
     // PROFESORES
     // obtenemos el primer div #unProfe a partir del cual recorreremos los siguientes
@@ -122,16 +123,15 @@ function obtenerDatos() {
     } while (!salir);
 
     console.log("datos: " + datos);
+    console.log("asig: " + asig);
     console.log("profes: " + profes);
     console.log("alus: " + alus);
 }
 
-// añadimos datos del master, de la primera asignatura y de los profes y alus si hay
-// además bloqueamos la parte del master
-function addMasteryAsig() {
-
+// añadimos datos del master y bloqueamos la parte del master
+function addDatosMaster() {
     var root = MIXML.getRootNode();
-    console.log(root);
+    // console.log(root);
 
     root = root.firstElementChild.firstElementChild;
 
@@ -140,8 +140,9 @@ function addMasteryAsig() {
     root.setAttribute("anio", datos[1]);
     root.setAttribute("nombre", datos[2]);
 
-    console.log("Ahora el xml tocado: ");
-    console.log(root);
+    // console.log("- - - -");     console.log("- - - -");     console.log("- - - -");
+    // console.log("Ahora el xml tocado: ");
+    // console.log(root);
 
 
     // bloqueamos los input generales del máster
@@ -152,9 +153,37 @@ function addMasteryAsig() {
     esprimera = false; // si todo ha ido bien
 }
 
+function limpiarDatosAsig() {
+    console.log("hay que reiniciar los inputs de las asignaturas");
+    $('#asig-0-id').val("");
+    $('#asig-0-nombre').val("");
+    $('#asig-0-desc').val("");
+    $('#asig-0-creditos').val("");
+}
+
 // añadimos sólo la nueva asignatura si no está duplicada
 function addAsig() {
-    
+    var root = MIXML.getRootNode();
+    root = root.firstElementChild.firstElementChild;
+
+    // console.log("- - - -");     console.log("- - - -");     console.log("- - - -");
+    console.log(root);
+
+    // creación y asignación elementos de la nueva asignatura
+    var ass = document.createElement("asignaturas");
+    var as = document.createElement("asignatura"); as.setAttribute("id", asig[0]);
+    var a_nom = document.createElement("nombre"); a_nom.innerHTML = asig[1];
+    var a_des = document.createElement("descripcion"); a_des.innerHTML = asig[2];
+    var a_cre = document.createElement("creditos"); a_nom.innerHTML = asig[3];
+    as.appendChild(a_nom);
+    as.appendChild(a_des);
+    as.appendChild(a_cre);
+    ass.appendChild(as);
+    root.appendChild(ass);
+
+    // var a_nom = as.createElement("profesore");
+    console.log("- - - -");     console.log("- - - -");     console.log("- - - -");
+    console.log(root);
 }
 
 var esprimera = true;
@@ -163,8 +192,11 @@ function addAsignatura2() {
         // añadimos la asignatura al máster
         obtenerDatos();
 
-        if (esprimera) addMasteryAsig(); 
-        else addAsig();
+        if (esprimera) addDatosMaster(); 
+        
+        addAsig();
+
+        limpiarDatosAsig();
         
         alertify.success("Asignatura añadida con éxito!");
     } else {

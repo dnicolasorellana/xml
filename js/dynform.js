@@ -26,13 +26,15 @@ form.addEventListener('submit', (e) => {
 function addProfesor() {
 
     idProfesor++;
-
+    let tags = ['nombre','apellidos','nacimiento'];
     const inputDyn = document.getElementById('input-profesor');
     let newInput = inputDyn.firstElementChild.cloneNode(true);
-
-    newInput.firstElementChild.id = `profesor-${idProfesor}`;
-
-    newInput.firstElementChild.value="";
+    let inputs = newInput.getElementsByTagName('input');
+    console.log(inputs);
+    for (let index = 0; index < inputs.length; index++) {
+        inputs[index].id = `profesor-${idProfesor}-${tags[index]}`;
+        inputs[index].value = "";
+    }
 
     inputDyn.appendChild(newInput);
     removeBtnProf.classList.remove('disabled');
@@ -88,11 +90,16 @@ function removeAsignatura() {
 function addAlumno() {
 
     idAlumno++;
+    let tags = ['nombre','apellidos','nacimiento'];
     const inputDyn = document.getElementById('input-alumnos');
     let newInput = inputDyn.firstElementChild.cloneNode(true);
 
-    newInput.firstElementChild.id=`alumno-${idAlumno}`;
-    newInput.firstElementChild.value="";
+    let inputs = newInput.getElementsByTagName('input');
+    console.log(inputs);
+    for (let index = 0; index < inputs.length; index++) {
+        inputs[index].id = `alumno-${idAlumno}-${tags[index]}`;
+        inputs[index].value = "";
+    }
 
     inputDyn.appendChild(newInput);
     removeBtnAlu.classList.remove('disabled');
