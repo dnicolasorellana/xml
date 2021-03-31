@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    for (let index = 0; index < form.elements.length; index++) {
-        const element = form[index].id;
-        console.log(element);
-    }
+//     let masteres = MIXML.getElementsByTagName('masteres')[0];
+//     console.log(masteres);
 });
 
 function addProfesor() {
@@ -113,4 +111,61 @@ function removeAlumno() {
     } else {
         removeBtnAlu.classList.remove('disabled');
     }
+}
+
+function borrarDivsDinamicos(){
+    // hay que borrar los divs #unProfe y #unAlumno excepto uno
+    var a = document.querySelector("#unAlumno");
+
+    // entramos en el primer elemento input hijo
+    // a este elemento le borraremos los datos del input, a los siguientes los eliminaremos
+    var ai = a.firstElementChild;
+    ai.value = "";
+    ai = ai.nextElementSibling; ai.value = "";
+    ai = ai.nextElementSibling; ai.value = "";
+
+    // vamos al segundo elemento #unAlumno
+    a = a.nextElementSibling;
+    salir = false;
+    do {
+        // tratamos el alumno si tiene datos
+        if (a==null) {
+            salir = true;
+        } else {
+            // vamos al siguiente alumno
+            var b = a.nextElementSibling;
+            a.parentNode.removeChild(a);    // borramos el nodo a
+            a = b;
+            if (a == null) salir = true;
+        }
+        
+    } while (!salir);
+
+    // lo mismo para profes
+    var a = document.querySelector("#unProfe");
+
+    // entramos en el primer elemento input hijo
+    // a este elemento le borraremos los datos del input, a los siguientes los eliminaremos
+    var ai = a.firstElementChild;
+    ai.value = "";
+    ai = ai.nextElementSibling; ai.value = "";
+    ai = ai.nextElementSibling; ai.value = "";
+
+    // vamos al segundo elemento #unAlumno
+    a = a.nextElementSibling;
+    salir = false;
+    do {
+        // tratamos el alumno si tiene datos
+        if (a==null) {
+            salir = true;
+        } else {
+            // vamos al siguiente alumno
+            var b = a.nextElementSibling;
+            a.parentNode.removeChild(a);    // borramos el nodo a
+            a = b;
+            if (a == null) salir = true;
+        }
+        
+    } while (!salir);
+
 }

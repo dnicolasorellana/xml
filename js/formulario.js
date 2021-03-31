@@ -10,11 +10,45 @@ var ini =
 </masteres>`;
 
 var MIXML;
+var MAINXML;
 
 window.onload = function() {
     // creamos un XML con la estructura / o el ele master solo ???
     MIXML = jQuery.parseXML(ini);
-    console.log(MIXML.getRootNode());
+    // console.log(MIXML.getRootNode());
+
+    console.log("zzz");
+    $.get("../xml/nuestroxml.xml",null,function(xml){
+        console.log("se ha leido bine el fichero! ");
+        // console.log(x);
+        copiar(xml);
+    }, "xml");
+}
+
+function copiar(x) {
+    let nuevo = x.cloneNode(true);
+    MAINXML = nuevo;
+    console.log(nuevo);
+    var masteres = MAINXML.getRootNode().firstElementChild;
+    console.log(masteres);
+}
+
+function crearMaster () {
+    console.log("probando probando");
+    var newDocument = MAINXML.implementation.createDocument(
+        MAINXML.namespaceURI, //namespace to use
+        null,                     //name of the root element (or for empty document)
+        null                      //doctype (null for XML)
+    );
+    var newNode = newDocument.importNode(
+        MAINXML.documentElement, //node to import
+        true                         //clone its descendants
+    );
+    newDocument.appendChild(newNode);
+    console.log(newDocument);
+    newDocument.firstElementChild.appendChild(MIXML.firstElementChild.firstElementChild);
+
+    window.location.href = "../xml/nuestroxml.xml";
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -43,89 +77,72 @@ function comprobarAsignaturaRellena() {
 }
 
 // arrays que contendrán los datos de los nodos
-var datos = [];     // datos generales del master 
+var master = [];     // datos generales del master 
 var asig = [];      // de la primera asignatura
 var profes = [];
 var alus = [];
 
 function obtenerDatos() {
 
-    datos.push($('#identificador').val());
-    datos.push($('#anyo').val());
-    datos.push($('#master').val());
+    asig = [];      // de la primera asignatura
+    profes = [];
+    alus = [];
+    if (esprimera) {
+        let datos = {};
+        datos.id = $('#identificador').val();
+        datos.anyo = $('#anyo').val();
+        datos.nombre = $('#master').val();
+    
+        master.push(datos);
+    }
 
-    asig.push($('#asig-0-id').val());
-    asig.push($('#asig-0-nombre').val());
-    asig.push($('#asig-0-desc').val());
-    asig.push($('#asig-0-creditos').val());
+    let datosAsig = {};
+    datosAsig.id = $('#asig-0-id').val();
+    datosAsig.nombre = $('#asig-0-nombre').val();
+    datosAsig.desc = $('#asig-0-desc').val();
+    datosAsig.creditos = $('#asig-0-creditos').val();
+
+    asig.push(datosAsig);
 
     // PROFESORES
-    // obtenemos el primer div #unProfe a partir del cual recorreremos los siguientes
-    var p = document.querySelector("#unProfe");
-    if (p == null) {
+    // obtenemos el todos lo elementos con clase unProfe a partir del cual recorreremos los siguientes
+    var profesEl = document.querySelectorAll(".unProfe");
+
+    if (profesEl == null) {
         alertify.error("No hay profesores en la asignatura!");
         return false;
     }
 
-    var salir = false;
-    do {
-        // tratamos el profe si tiene datos
-        var pi = p.firstElementChild; // entramos en el primer elemento input hijo
-        if (pi==null) {
-            salir = true;
-        } else {
-            // console.log(i + "# master: " + m.textContent);
-            var nom = pi.value; 
-            pi = pi.nextElementSibling;
-            var ape = pi.value; 
-            pi = pi.nextElementSibling;
-            var dat = pi.value; 
-            pi = pi.nextElementSibling;
-            console.log(nom + " " + ape + " " + dat);
-
-            // subimos los datos de los profesores al array de profes
-            profes.push(nom); profes.push(ape); profes.push(dat);
-        
-            // vamos al siguiente profe
-            p = p.nextElementSibling;
-            if (p == null) salir = true;
+    for (let i = 0; i < profesEl.length; i++) {
+        let div = profesEl[i].children;
+        console.log(div);
+        let profe = {};
+        for (let j = 0; j < div.length; j++) {
+            profe.nombre = div[0].value;
+            profe.apellidos = div[1].value;
+            profe.nacimiento = div[2].value;
         }
-        
-    } while (!salir);
-
+        profes.push(profe);
+    }
     // ALUMNOS
     // obtenemos el primer div #unAlumno a partir del cual recorreremos los siguientes
-    var a = document.querySelector("#unAlumno");
+    var alumnosEl = document.querySelectorAll(".unAlumno");
+    if (alumnosEl == null) {
+        alertify.error("No hay alumnos matriculados!");
+        return false;
+    }
 
-    salir = false;
-    do {
-        // tratamos el alumno si tiene datos
-        var ai = a.firstElementChild; // entramos en el primer elemento input hijo
-        if (ai==null) {
-            salir = true;
-        } else {
-            var nom = ai.value; 
-            ai = ai.nextElementSibling;
-            var ape = ai.value; 
-            ai = ai.nextElementSibling;
-            var dat = ai.value; 
-            ai = ai.nextElementSibling;
-            console.log(nom + " " + ape + " " + dat);
-
-            // subimos los datos de los alumnos al array de alumnos
-            alus.push(nom); alus.push(ape); alus.push(dat);
-        
-            // vamos al siguiente alumno
-            a = a.nextElementSibling;
-            if (a == null) salir = true;
+    for (let i = 0; i < alumnosEl.length; i++) {
+        let div = alumnosEl[i].children;
+        console.log(div);
+        let alu = {};
+        for (let j = 0; j < div.length; j++) {
+            alu.nombre = div[0].value;
+            alu.apellidos = div[1].value;
+            alu.nacimiento = div[2].value;
         }
-        
-    } while (!salir);
-
-    console.log("datos: " + datos);
-    console.log("asig: " + asig);
-    console.log("profes: " + profes);
-    console.log("alus: " + alus);
+        alus.push(alu);
+    }
 }
 
 // añadimos datos del master y bloqueamos la parte del master
@@ -136,9 +153,9 @@ function addDatosMaster() {
     root = root.firstElementChild.firstElementChild;
 
     // modificamos los atributos:
-    root.setAttribute("id", datos[0]);
-    root.setAttribute("anio", datos[1]);
-    root.setAttribute("nombre", datos[2]);
+    root.setAttribute("id", master[0].id);
+    root.setAttribute("anio", master[0].anyo);
+    root.setAttribute("nombre", master[0].nombre);
 
     // console.log("- - - -");     console.log("- - - -");     console.log("- - - -");
     // console.log("Ahora el xml tocado: ");
@@ -150,7 +167,6 @@ function addDatosMaster() {
     $('#anyo').prop("disabled", true);
     $('#master').prop("disabled", true);
 
-    esprimera = false; // si todo ha ido bien
 }
 
 function limpiarDatosAsig() {
@@ -159,6 +175,8 @@ function limpiarDatosAsig() {
     $('#asig-0-nombre').val("");
     $('#asig-0-desc').val("");
     $('#asig-0-creditos').val("");
+
+    borrarDivsDinamicos();
 }
 
 // añadimos sólo la nueva asignatura si no está duplicada
@@ -166,24 +184,50 @@ function addAsig() {
     var root = MIXML.getRootNode();
     root = root.firstElementChild.firstElementChild;
 
-    // console.log("- - - -");     console.log("- - - -");     console.log("- - - -");
-    console.log(root);
-
     // creación y asignación elementos de la nueva asignatura
-    var ass = document.createElement("asignaturas");
-    var as = document.createElement("asignatura"); as.setAttribute("id", asig[0]);
-    var a_nom = document.createElement("nombre"); a_nom.innerHTML = asig[1];
-    var a_des = document.createElement("descripcion"); a_des.innerHTML = asig[2];
-    var a_cre = document.createElement("creditos"); a_nom.innerHTML = asig[3];
+    if (esprimera) {
+        var ass = document.createElement("asignaturas");
+    } else {
+        var ass = root.getElementsByTagName('asignaturas')[0];
+    }
+
+    var as = document.createElement("asignatura"); as.setAttribute("id", asig[0].id);
+    var a_nom = document.createElement("nombre"); a_nom.innerHTML = asig[0].nombre;
+    var a_des = document.createElement("descripcion"); a_des.innerHTML = asig[0].desc;
+    var a_cre = document.createElement("creditos"); a_cre.innerHTML = asig[0].creditos;
+
+    var p = document.createElement("profesores");
+    for (let i = 0; i < profes.length; i++) {
+        var prof = document.createElement("profesor");
+        var prof_nom = document.createElement("nombre"); prof_nom.innerHTML = profes[i].nombre;
+        var prof_des = document.createElement("apellidos"); prof_des.innerHTML = profes[i].apellidos;
+        var prof_cre = document.createElement("nacimiento"); prof_cre.innerHTML = profes[i].nacimiento;
+        prof.appendChild(prof_nom);
+        prof.appendChild(prof_des);
+        prof.appendChild(prof_cre);
+        p.appendChild(prof);
+
+    }
+
+    var al = document.createElement("alumnos");
+    for (let i = 0; i < alus.length; i++) {
+        var alu = document.createElement("alumno");
+        var al_nom = document.createElement("nombre"); al_nom.innerHTML = alus[i].nombre;
+        var al_des = document.createElement("apellidos"); al_des.innerHTML = alus[i].apellidos;
+        var al_cre = document.createElement("nacimiento"); al_cre.innerHTML = alus[i].nacimiento;
+        alu.appendChild(al_nom);
+        alu.appendChild(al_des);
+        alu.appendChild(al_cre);
+        al.appendChild(alu);
+    }
+
     as.appendChild(a_nom);
     as.appendChild(a_des);
     as.appendChild(a_cre);
+    as.appendChild(p);
+    as.appendChild(al);
     ass.appendChild(as);
     root.appendChild(ass);
-
-    // var a_nom = as.createElement("profesore");
-    console.log("- - - -");     console.log("- - - -");     console.log("- - - -");
-    console.log(root);
 }
 
 var esprimera = true;
@@ -198,6 +242,7 @@ function addAsignatura2() {
 
         limpiarDatosAsig();
         
+        esprimera = false; // si todo ha ido bien
         alertify.success("Asignatura añadida con éxito!");
     } else {
         alertify.error("Faltan campos por rellenar");

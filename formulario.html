@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Crear Master</title>
 
     <!-- Bootstrap -->
@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="./css/style_formulario.css">
-    </link>
+    <!-- <link rel="stylesheet" href="/css/style_formulario.css"/> -->
+    <link rel="stylesheet" href="css/style_formulario.css"/>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
             <div class="row p-2">
                 <div class="form-group col-md-2">
                     <label for="identificador">Identificador</label>
-                    <input type="text" class="form-control" id="identificador" placeholder="XXXX" maxlength="4" value="M001">
+                    <input type="text" class="form-control" id="identificador" placeholder="XXXX" maxlength="4" value="M001"/>
                     <small id="emailHelp" class="form-text text-muted">4 caracteres</small>
                 </div>
                 <div class="form-group col-md-3">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group col-md-7">
                     <label for="master">Nombre del máster</label>
-                    <input type="text" class="form-control" id="master" placeholder="Nombre" value="Master en papiroflexia">
+                    <input type="text" class="form-control" id="master" placeholder="Nombre" value="Master en papiroflexia"/>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                 <div class="mt-1 mx-0 px-0">
                     <h5 class="mt-1">Profesores que imparten en el máster</h5>
                     <div id="input-profesor" class="p-0 form-group">
-                        <div class=" mx-0 px-0 w-75" id="unProfe">
+                        <div class=" mx-0 px-0 w-75 unProfe" id="unProfe">
                             <input type="text" class="form-control m-1" id="profesor-0-nombre" placeholder="Nombre" value="Dniel">
                             <input type="text" class="form-control m-1" id="profesor-0-apellidos" placeholder="Apellidos" value="Orellana">
                             <input type="date" class="form-control m-1 w-50" id="profesor-0-nacimiento" value="1900-01-01" min="1900-01-01" max="2000-01-01">
@@ -90,7 +90,7 @@
                 <div class="mt-1 mx-0 px-0">
                     <h5 class="mt-1">Alumnos matriculados</h5>
                     <div id="input-alumnos" class="p-0 form-group">
-                        <div class=" mx-0 px-0 w-75" id="unAlumno">
+                        <div class=" mx-0 px-0 w-75 unAlumno" id="unAlumno">
                             <input type="text" class="form-control m-1" id="alumno-0-nombre" placeholder="Nombre" value="pepa">
                             <input type="text" class="form-control m-1" id="alumno-0-apellidos" placeholder="Apellidos" value="de los palotes">
                             <input type="date" class="form-control m-1 w-50" id="alumno-0-nacimimiento"  value="2000-01-01" min="1900-01-01" max="2010-01-01">
@@ -107,7 +107,7 @@
                 <a class="btn btn-secondary mt-2 pt-1 px-3 text-white w-25" id="btn-borrarAsignatura" onclick="removeAsignatura()">Borrar asignatura</a>
             </div>
             <div class="container mt-5">
-                <button type="submit" id="submit-btn" class="btn btn-success">Añadir Máster</button>
+                <button type="submit" id="submit-btn" class="btn btn-success" onclick="crearMaster()">Añadir Máster</button>
             </div>
         </form>
     </div>
