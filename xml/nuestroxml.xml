@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE masteres SYSTEM "./masteres.dtd"> -->
+<?xml-stylesheet href="mostrar.xsl" type="text/xsl" ?>
+
+<masteres xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./masteres.xsd">
+    <master id="0001" anio="2020-21" nombre="MÁSTER EN DESARROLLO DE APLICACIONES Y SERVICIOS WEB">
+        <asignaturas>
+            <asignatura id="38205">
+                <nombre>ARQUITECTURA DE SISTEMAS SOFTWARE</nombre>
+                <descripcion>Una pequenia descripcion</descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Virgilio</nombre>
+                        <apellidos>Gilart Iglesias</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-12-1996</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="38202">
+                <nombre>DISEÑO DIRIGIDO POR PATRONES</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Santiago</nombre>
+                        <apellidos>Melia Beigbeder</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="38201">
+                <nombre>ANÁLISIS AVANZADO DE SISTEMAS SOFTWARE</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Jose Norberto</nombre>
+                        <apellidos>Mazon Lopez</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="38214">
+                <nombre>ANÁLISIS DE LAS TENDENCIAS EN INTERNET</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Maria Pilar</nombre>
+                        <apellidos>Escobar Esteban</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="38210">
+                <nombre>BASES DE DATOS</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Armando</nombre>
+                        <apellidos>Suarez Cueto</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+        </asignaturas>
+    </master>
+    <master id="0002" anio="2020-21" nombre="MÁSTER EN BIG DATA">
+        <asignaturas>
+            <asignatura id="00021">
+                <nombre>ARQUITECTURA DE SISTEMAS SOFTWARE</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Virgilio</nombre>
+                        <apellidos>Gilart Iglesias</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-12-1996</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="00022">
+                <nombre>DISEÑO DIRIGIDO POR PATRONES</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Santiago</nombre>
+                        <apellidos>Melia Beigbeder</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="00023">
+                <nombre>ANÁLISIS AVANZADO DE SISTEMAS SOFTWARE</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Jose Norberto</nombre>
+                        <apellidos>Mazon Lopez</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="00024">
+                <nombre>ANÁLISIS DE LAS TENDENCIAS EN INTERNET</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Maria Pilar</nombre>
+                        <apellidos>Escobar Esteban</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Pepe</nombre>
+                        <apellidos>Hoal</apellidos>
+                        <nacimiento>07-02-1994</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+            <asignatura id="00025">
+                <nombre>BASES DE DATOS</nombre>
+                <descripcion></descripcion>
+                <creditos>6</creditos>
+                <localizacion>
+                    <lat>3.1415</lat>
+                    <long>43.12</long>
+                </localizacion>
+                <profesores>
+                    <profesor>
+                        <nombre>Armando</nombre>
+                        <apellidos>Suarez Cueto</apellidos>
+                        <nacimiento>01-01-1990</nacimiento>
+                    </profesor>
+                </profesores>
+                <alumnos>
+                    <alumno>
+                        <nombre>Anastasiia</nombre>
+                        <apellidos>Gorelova</apellidos>
+                        <nacimiento>27-01-1997</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Nicolas</nombre>
+                        <apellidos>Orellana</apellidos>
+                        <nacimiento>19-06-1993</nacimiento>
+                    </alumno>
+                    <alumno>
+                        <nombre>Jonatan</nombre>
+                        <apellidos>Puche</apellidos>
+                        <nacimiento>21-09-1997</nacimiento>
+                    </alumno>
+                </alumnos>
+            </asignatura>
+        </asignaturas>
+    </master>
+    
+</masteres>

@@ -1,0 +1,22 @@
+
+<!ELEMENT masteres (master*)>
+<!ELEMENT master (asignaturas*)>
+<!ATTLIST master id CDATA #REQUIRED>
+<!ATTLIST master anio CDATA #REQUIRED>
+<!ATTLIST master nombre CDATA #REQUIRED>
+<!ELEMENT asignaturas (asignatura*)>
+<!ELEMENT asignatura (nombre, descripcion, 
+    creditos, localizacion?, profesores+, alumnos*)>
+<!ATTLIST asignatura id CDATA #REQUIRED>
+<!ELEMENT localizacion (lat, long)>
+<!ELEMENT profesores (profesor*)>
+<!ELEMENT alumnos (alumno*)>
+<!ELEMENT profesor (nombre, apellidos, nacimiento)>
+<!ELEMENT alumno (nombre, apellidos, nacimiento)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT creditos (#PCDATA)>
+<!ELEMENT lat (#PCDATA)>
+<!ELEMENT long (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT nacimiento (#PCDATA)>
